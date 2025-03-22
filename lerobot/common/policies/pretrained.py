@@ -129,7 +129,7 @@ class PreTrainedPolicy(nn.Module, HubMixin, abc.ABC):
                 raise FileNotFoundError(
                     f"{SAFETENSORS_SINGLE_FILE} not found on the HuggingFace Hub in {model_id}"
                 ) from e
-
+        print(f'Loaded policy to CPU')
         # policy.to(config.device)
         # policy.eval()
         return policy
